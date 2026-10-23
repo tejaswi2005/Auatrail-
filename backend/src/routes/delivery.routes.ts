@@ -16,7 +16,7 @@ const assignmentSchema = z.object({
 });
 
 // Assign a delivery to a driver
-router.post(
+router.patch(
   "/:deliveryId/assign",
   authenticate,
   allowRoles(UserRole.OWNER),

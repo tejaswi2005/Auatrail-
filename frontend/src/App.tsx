@@ -13,6 +13,14 @@ import CustomerProducts from "./pages/customer/CustomerProducts";
 import CustomerCheckout from "./pages/customer/CustomerCheckout";
 import TrackDelivery from "./pages/customer/TrackDelivery";
 
+
+import OwnerProducts from "./pages/owner/OwnerProducts";
+import OwnerOrders from "./pages/owner/OwnerOrders";
+import Drivers from "./pages/owner/Drivers";
+import OwnerSettings from "./pages/owner/OwnerSettings";
+import Inventory from "./pages/owner/Inventory";
+
+
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function Unauthorized() {
@@ -52,6 +60,26 @@ export default function App() {
             path="/owner/dashboard"
             element={<OwnerDashboard />}
           />
+          <Route
+            path="/owner/products"
+            element={<OwnerProducts />}
+          />
+          <Route
+            path="/owner/orders"
+            element={<OwnerOrders />}
+          />
+          <Route
+            path="/owner/drivers"
+            element={<Drivers />}
+          />
+          <Route 
+            path="/owner/settings" 
+            element={<OwnerSettings />} 
+          />
+          <Route 
+            path="/owner/inventory" 
+            element={<Inventory />} 
+          />
         </Route>
 
         {/* Driver routes */}
@@ -77,7 +105,7 @@ export default function App() {
             path="/customer/orders"
             element={<CustomerOrders />}
           />
-          
+
           <Route
             path="/customer/products"
             element={<CustomerProducts />}
@@ -85,6 +113,10 @@ export default function App() {
           <Route
             path="/customer/checkout"
             element={<CustomerCheckout />}
+          />
+          <Route
+            path="/customer/track/:deliveryId"
+            element={<TrackDeliveryRoute />}
           />
         </Route>
 
@@ -95,9 +127,9 @@ export default function App() {
           element={<Navigate to="/login" replace />}
         />
         <Route
-  path="/customer/track/:deliveryId"
-  element={<TrackDeliveryRoute />}
-/>
+          path="/customer/track/:deliveryId"
+          element={<TrackDeliveryRoute />}
+        />
       </Routes>
     </BrowserRouter>
   );

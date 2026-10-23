@@ -7,6 +7,7 @@ import addressRoutes from "./routes/address.routes.js";
 import orderRoutes from "./routes/order.routes.js";
 import deliveryRoutes from "./routes/delivery.routes.js";
 import customerRoutes from "./routes/customer.routes.js";
+import driverRoutes from "./routes/driver.routes.js";
 
 export function createApp() {
   const app = express();
@@ -48,6 +49,7 @@ export function createApp() {
   app.use("/api/products", productRoutes);
   app.use("/api/addresses", addressRoutes);
   app.use("/api/orders", orderRoutes);
+  app.use("/api/drivers", driverRoutes);
   app.use("/api/deliveries", deliveryRoutes);
   app.use("/api/customers", customerRoutes);
 
